@@ -9,33 +9,44 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
-      --text: #1a1a1a;
-      --bg: #f5f5f5;
-      --accent: #1e90ff;
-      --card-bg: #fff;
-      --shadow: 0 4px 6px rgba(0,0,0,0.1);
+      --text: #2d3748;
+      --bg: #f7fafc;
+      --accent: #3182ce;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+      --header-bg: rgba(255,255,255,0.95);
     }
     [data-theme="dark"] {
-      --text: #e0e0e0;
-      --bg: #1a1a1a;
-      --card-bg: #2a2a2a;
+      --text: #e2e8f0;
+      --bg: #1a202c;
+      --card-bg: #2d3748;
+      --header-bg: rgba(45,55,72,0.95);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       color: var(--text);
       background: var(--bg);
       line-height: 1.6;
       transition: background 0.3s, color 0.3s;
     }
     .container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 0 20px;
     }
     header {
-      padding: 20px 0;
-      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      background: var(--header-bg);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     .nav {
       display: flex;
@@ -49,13 +60,15 @@
       color: var(--text);
     }
     .actions .btn {
-      margin-left: 10px;
+      margin-left: 15px;
       text-decoration: none;
       color: var(--accent);
-      font-weight: 600;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.2s;
     }
     .actions .btn:hover {
-      text-decoration: underline;
+      color: #2b6cb0;
     }
     .actions .toggle {
       background: none;
@@ -63,65 +76,94 @@
       color: var(--accent);
       font-size: 1.2rem;
       cursor: pointer;
-      margin-left: 10px;
+      margin-left: 15px;
       padding: 5px;
-      transition: color 0.3s;
+      transition: color 0.2s;
     }
     .actions .toggle:hover {
-      color: #0052cc;
+      color: #2b6cb0;
     }
     .hero {
-      padding: 40px 0;
+      position: relative;
       text-align: center;
+      padding: 80px 0;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/hero-bg.jpg') no-repeat center/cover;
+      color: #ffffff;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
     }
     .avatar {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       background-size: cover;
       background-position: center;
       border-radius: 50%;
       margin: 0 auto 20px;
+      border: 4px solid #ffffff;
       box-shadow: var(--shadow);
     }
     h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin: 0 0 10px;
+      font-weight: 700;
     }
     .tagline {
-      font-size: 1.1rem;
-      color: #555;
+      font-size: 1.2rem;
+      opacity: 0.9;
       max-width: 600px;
       margin: 0 auto 20px;
     }
     .links a {
-      margin: 0 10px;
-      color: var(--accent);
-      font-size: 1.5rem;
+      margin: 0 12px;
+      color: #ffffff;
+      font-size: 1.8rem;
       text-decoration: none;
+      transition: color 0.2s;
     }
     .links a:hover {
-      color: #0052cc;
+      color: var(--accent);
     }
     section {
-      padding: 40px 0;
+      padding: 60px 0;
     }
     .card {
       background: var(--card-bg);
-      padding: 20px;
-      border-radius: 8px;
+      padding: 30px;
+      border-radius: 12px;
       box-shadow: var(--shadow);
       transition: background 0.3s;
     }
     h2 {
-      font-size: 1.5rem;
-      margin-top: 0;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 1.1rem;
     }
     footer {
       padding: 20px 0;
       text-align: center;
-      color: #555;
+      color: #718096;
       font-size: 0.9rem;
-      border-top: 1px solid #e0e0e0;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    @media (max-width: 600px) {
+      .hero {
+        padding: 60px 0;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .tagline {
+        font-size: 1rem;
+      }
+      .avatar {
+        width: 140px;
+        height: 140px;
+      }
     }
   </style>
 </head>
@@ -129,7 +171,7 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <a href="/">Sinalytics</a>
+        <a href="/">Sinalytics: Smart Insights, Nuanced Analytics</a>
       </div>
       <div class="actions">
         <a class="btn" href="/cv.pdf" target="_blank" rel="noopener">CV</a>
@@ -144,7 +186,7 @@
         <div class="avatar" style="background-image:url('/assets/avatar.jpg')" role="img" aria-label="Portrait of Sina"></div>
         <h1>Sina Aghaee Dabaghan Fard</h1>
         <!-- <div class="tagline">
-          PhD student (ISEN · Data Science), Texas A&amp;M.
+          PhD student (ISEN · Data Science), Texas A&amp;M
         </div> -->
         <div class="links">
           <a href="mailto:sina.aghaee@tamu.edu" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -162,7 +204,7 @@
           <p>
             I’m a PhD student in Industrial &amp; Systems Engineering (Data Science track) at Texas A&amp;M University.
             My research focuses on advanced statistical modeling and machine learning for quality and reliability engineering,
-            including Bayesian modeling, Gaussian processes, survival analysis, Physics-Informed Neural Networks, and Bayesian Last-Layer Neural Networks. 
+            including Bayesian modeling, Gaussian processes, survival analysis, Physics-Informed Neural Networks, and Bayesian Last-Layer Neural Networks.
           </p>
         </div>
       </div>

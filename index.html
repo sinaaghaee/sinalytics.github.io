@@ -64,6 +64,11 @@
       font-size: 1.2rem;
       cursor: pointer;
       margin-left: 10px;
+      padding: 5px;
+      transition: color 0.3s;
+    }
+    .actions .toggle:hover {
+      color: #0052cc;
     }
     .hero {
       padding: 40px 0;
@@ -128,7 +133,7 @@
       </div>
       <div class="actions">
         <a class="btn" href="/cv.pdf" target="_blank" rel="noopener">CV</a>
-        <button class="toggle" aria-label="Toggle theme" onclick="toggleTheme()">🌓</button>
+        <button class="toggle" aria-label="Switch to dark mode" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
       </div>
     </div>
   </header>
@@ -171,11 +176,18 @@
     document.getElementById('y').textContent = new Date().getFullYear();
     function toggleTheme() {
       const body = document.body;
+      const toggleButton = document.querySelector('.toggle i');
       const currentTheme = body.getAttribute('data-theme');
       if (currentTheme === 'dark') {
         body.removeAttribute('data-theme');
+        toggleButton.classList.remove('fa-sun');
+        toggleButton.classList.add('fa-moon');
+        toggleButton.parentElement.setAttribute('aria-label', 'Switch to dark mode');
       } else {
         body.setAttribute('data-theme', 'dark');
+        toggleButton.classList.remove('fa-moon');
+        toggleButton.classList.add('fa-sun');
+        toggleButton.parentElement.setAttribute('aria-label', 'Switch to light mode');
       }
     }
   </script>

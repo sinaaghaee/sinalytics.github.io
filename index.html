@@ -1,365 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sinalytics - Personal Website</title>
-  <meta name="description" content="Personal website of Sina - Projects, Research, and Ideas">
-  
-  <meta property="og:title" content="Sinalytics - Personal Website">
-  <meta property="og:description" content="Personal website of Sina - Projects, Research, and Ideas">
-  <meta property="og:type" content="website">
-  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sinalytics — Sina Aghaee Dabaghan Fard</title>
+  <meta name="description" content="Bayesian & ensemble ML for reliability and prognostics.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --text: #1a1a1a;
+      --bg: #f5f5f5;
+      --accent: #1e90ff;
+      --card-bg: #fff;
+      --shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-
-    html {
-      scroll-behavior: smooth;
+    [data-theme="dark"] {
+      --text: #e0e0e0;
+      --bg: #1a1a1a;
+      --card-bg: #2a2a2a;
     }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background: hsl(0, 0%, 98%);
-      color: hsl(220, 15%, 20%);
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      background: var(--bg);
       line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
     }
-
     .container {
-      max-width: 1200px;
+      max-width: 800px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 20px;
     }
-
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 8rem 1.5rem;
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #e0e0e0;
     }
-
-    .hero h1 {
-      font-size: clamp(3rem, 8vw, 5rem);
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    .hero p {
-      font-size: clamp(1.25rem, 3vw, 1.5rem);
-      color: hsl(220, 10%, 50%);
-      max-width: 48rem;
-      margin: 0 auto;
-      animation: fadeInUp 1s ease-out 0.15s backwards;
-    }
-
-    /* Section Styles */
-    section {
-      padding: 5rem 1.5rem;
-    }
-
-    section h2 {
-      font-size: clamp(2rem, 5vw, 2.5rem);
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .bg-alt {
-      background: hsl(220, 15%, 95%);
-    }
-
-    /* Card Styles */
-    .card {
-      background: white;
-      border: 1px solid hsl(220, 15%, 90%);
-      border-radius: 0.75rem;
-      padding: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      transform: translateY(-4px);
-    }
-
-    /* About Section */
-    .about-container {
-      max-width: 48rem;
-      margin: 0 auto;
-    }
-
-    .about-card p {
-      font-size: 1.125rem;
-      color: hsl(220, 10%, 50%);
-      line-height: 1.8;
-    }
-
-    /* Projects Section */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      max-width: 80rem;
-      margin: 0 auto;
-    }
-
-    .project-card {
+    .nav {
       display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.5rem;
+      justify-content: space-between;
     }
-
-    .project-card h3 {
-      font-size: 1.25rem;
+    .brand a {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .actions .btn {
+      margin-left: 10px;
+      text-decoration: none;
+      color: var(--accent);
       font-weight: 600;
     }
-
-    .project-icon {
-      width: 1.25rem;
-      height: 1.25rem;
-      color: hsl(220, 10%, 50%);
-      transition: color 0.3s ease;
+    .actions .btn:hover {
+      text-decoration: underline;
     }
-
-    .project-card:hover .project-icon {
-      color: hsl(217, 91%, 60%);
-    }
-
-    .project-description {
-      color: hsl(220, 10%, 50%);
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
-    }
-
-    .project-link {
-      display: block;
-      width: 100%;
-      padding: 0.5rem 1rem;
-      text-align: center;
-      background: transparent;
+    .actions .toggle {
+      background: none;
       border: none;
-      border-radius: 0.5rem;
-      color: hsl(220, 15%, 20%);
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background 0.3s ease;
+      color: var(--accent);
+      font-size: 1.2rem;
       cursor: pointer;
+      margin-left: 10px;
     }
-
-    .project-link:hover {
-      background: hsla(217, 91%, 60%, 0.1);
-    }
-
-    /* Contact Section */
-    .contact-container {
-      max-width: 48rem;
-      margin: 0 auto;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      transition: background 0.3s ease;
-    }
-
-    .contact-item:hover {
-      background: hsl(220, 15%, 95%);
-    }
-
-    .contact-icon {
-      width: 1.5rem;
-      height: 1.5rem;
-      color: hsl(217, 91%, 60%);
-      flex-shrink: 0;
-    }
-
-    .contact-item a {
-      font-size: 1.125rem;
-      color: hsl(220, 15%, 20%);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .contact-item a:hover {
-      color: hsl(217, 91%, 60%);
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid hsl(220, 15%, 90%);
-      padding: 2rem 1.5rem;
-      margin-top: 5rem;
+    .hero {
+      padding: 40px 0;
       text-align: center;
-      color: hsl(220, 10%, 50%);
     }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(1rem);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .avatar {
+      width: 200px;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      box-shadow: var(--shadow);
     }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero {
-        padding: 4rem 1.5rem;
-      }
-
-      section {
-        padding: 3rem 1.5rem;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
+    h1 {
+      font-size: 2rem;
+      margin: 0 0 10px;
+    }
+    .tagline {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+    .links a {
+      margin: 0 10px;
+      color: var(--accent);
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    .links a:hover {
+      color: #0052cc;
+    }
+    section {
+      padding: 40px 0;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transition: background 0.3s;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 0;
+    }
+    footer {
+      padding: 20px 0;
+      text-align: center;
+      color: #555;
+      font-size: 0.9rem;
+      border-top: 1px solid #e0e0e0;
     }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>Sinalytics</h1>
-      <p>Personal website • Projects • Research • Ideas</p>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <div class="about-container">
-        <h2>About Me</h2>
-        <div class="card about-card">
-          <p>
-            Hello! I'm Sina. This is my corner of the web where I share my projects, research, and ideas. 
-            I'm passionate about technology, innovation, and creating solutions that make a difference.
-          </p>
-        </div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <a href="/">Sinalytics</a>
+      </div>
+      <div class="actions">
+        <a class="btn" href="/cv.pdf" target="_blank" rel="noopener">CV</a>
+        <button class="toggle" aria-label="Toggle theme" onclick="toggleTheme()">🌓</button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Projects Section -->
-  <section id="projects" class="bg-alt">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="card project-card">
-          <div class="project-header">
-            <h3>Project 1</h3>
-            <svg class="project-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </div>
-          <p class="project-description">
-            A brief description of this amazing project and what it accomplishes.
-          </p>
-          <a href="#" class="project-link">View Project</a>
-        </div>
-
-        <div class="card project-card">
-          <div class="project-header">
-            <h3>Project 2</h3>
-            <svg class="project-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </div>
-          <p class="project-description">
-            Another innovative project showcasing technical skills and creativity.
-          </p>
-          <a href="#" class="project-link">View Project</a>
-        </div>
-
-        <div class="card project-card">
-          <div class="project-header">
-            <h3>Project 3</h3>
-            <svg class="project-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </div>
-          <p class="project-description">
-            An exciting project demonstrating problem-solving and development expertise.
-          </p>
-          <a href="#" class="project-link">View Project</a>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="avatar" style="background-image:url('/assets/avatar.jpg')" role="img" aria-label="Portrait of Sina"></div>
+        <h1>Sina Aghaee Dabaghan Fard</h1>
+        <!-- <div class="tagline">
+          PhD student (ISEN · Data Science), Texas A&amp;M.
+        </div> -->
+        <div class="links">
+          <a href="mailto:sina.aghaee@tamu.edu" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/sinaaghaee" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/sinaaghaee" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://scholar.google.com/citations?user=bsKhgAIAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-container">
-        <h2>Get in Touch</h2>
+    <section>
+      <div class="container">
         <div class="card">
-          <div class="contact-links">
-            <div class="contact-item">
-              <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-              </svg>
-              <a href="mailto:sinaaghaee21@gmail.com">sinaaghaee21@gmail.com</a>
-            </div>
-
-            <div class="contact-item">
-              <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                <path d="M9 18c-4.51 2-5-2-7-2"></path>
-              </svg>
-              <a href="https://github.com/sinaaghaee" target="_blank" rel="noopener noreferrer">@sinaaghaee</a>
-            </div>
-
-            <div class="contact-item">
-              <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-              <a href="https://linkedin.com/in/sinaaghaee" target="_blank" rel="noopener noreferrer">linkedin.com/in/sinaaghaee</a>
-            </div>
-          </div>
+          <h2>About</h2>
+          <p>
+            I’m a PhD student in Industrial &amp; Systems Engineering (Data Science track) at Texas A&amp;M University.
+            My research focuses on advanced statistical modeling and machine learning for quality and reliability engineering,
+            including Bayesian modeling, Gaussian processes, survival analysis, Physics-Informed Neural Networks, and Bayesian Last-Layer Neural Networks. 
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>© 2025 Sinalytics. All rights reserved.</p>
-    </div>
+    <div class="container">© <span id="y"></span> Sinalytics — Sina Aghaee Dabaghan Fard</div>
   </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    function toggleTheme() {
+      const body = document.body;
+      const currentTheme = body.getAttribute('data-theme');
+      if (currentTheme === 'dark') {
+        body.removeAttribute('data-theme');
+      } else {
+        body.setAttribute('data-theme', 'dark');
+      }
+    }
+  </script>
 </body>
 </html>

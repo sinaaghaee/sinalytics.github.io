@@ -1,8 +1,7 @@
 (function () {
   const root = document.documentElement;
   const storedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const activeTheme = storedTheme || (prefersDark ? "dark" : "light");
+  const activeTheme = storedTheme || "dark";
   root.setAttribute("data-theme", activeTheme);
 
   const currentPage = document.body.dataset.page;

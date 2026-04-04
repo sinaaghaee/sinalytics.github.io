@@ -68,4 +68,42 @@
   } else {
     reveals.forEach((item) => item.classList.add("is-visible"));
   }
+
+  document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll("[data-slide]"));
+    const dots = Array.from(carousel.querySelectorAll("[data-dot]"));
+    const prev = carousel.querySelector("[data-prev]");
+    const next = carousel.querySelector("[data-next]");
+    let index = 0;
+
+    function renderSlide(nextIndex) {
+      index = (nextIndex + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("is-active", slideIndex === index);
+      });
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === index);
+      });
+    }
+
+    if (!slides.length) {
+      return;
+    }
+
+    prev?.addEventListener("click", function () {
+      renderSlide(index - 1);
+    });
+
+    next?.addEventListener("click", function () {
+      renderSlide(index + 1);
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      dot.addEventListener("click", function () {
+        renderSlide(dotIndex);
+      });
+    });
+
+    renderSlide(0);
+  });
 })();

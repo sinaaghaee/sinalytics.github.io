@@ -551,6 +551,26 @@ p {
   font-size: 0.92rem;
 }
 
+.moment-card {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.image-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 210px;
+  border-radius: var(--radius-sm);
+  border: 1px dashed rgba(24, 78, 119, 0.3);
+  background:
+    linear-gradient(135deg, rgba(24, 78, 119, 0.08), rgba(193, 139, 62, 0.12)),
+    var(--surface-alt);
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .site-footer {
   padding: 2rem 0 3rem;
 }

@@ -918,11 +918,12 @@ body[data-page="contact"] .section-heading h2 {
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: var(--surface-alt);
+  aspect-ratio: 4 / 3;
 }
 
 .moment-image {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   background: var(--surface-alt);
@@ -939,13 +940,40 @@ body[data-page="contact"] .section-heading h2 {
 }
 
 .moment-carousel-frame .moment-image {
-  display: none;
+  position: absolute;
+  inset: 0;
   border: 0;
   border-radius: 0;
+  opacity: 0;
+  transform: translateX(0);
+  pointer-events: none;
+  transition: transform 0.38s ease, opacity 0.38s ease;
 }
 
 .moment-carousel-frame .moment-image.is-active {
-  display: block;
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.moment-carousel-frame .moment-image.is-entering-from-right {
+  transform: translateX(100%);
+}
+
+.moment-carousel-frame .moment-image.is-entering-from-left {
+  transform: translateX(-100%);
+}
+
+.moment-carousel-frame .moment-image.is-leaving-to-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.moment-carousel-frame .moment-image.is-leaving-to-right {
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 1;
 }
 
 .moment-controls {

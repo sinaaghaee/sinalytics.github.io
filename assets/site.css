@@ -1103,6 +1103,26 @@ body[data-page="contact"] .section-heading h2 {
     justify-self: stretch;
   }
 
+  body[data-page="home"] .hero-grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  body[data-page="home"] .hero-copy,
+  body[data-page="home"] .hero-card {
+    width: 100%;
+  }
+
+  body[data-page="home"] .hero-copy {
+    order: 1;
+  }
+
+  body[data-page="home"] .hero-card {
+    order: 2;
+    max-width: min(420px, 100%);
+    margin: 0 auto;
+  }
+
   .nav-row {
     flex-wrap: wrap;
     padding: 1rem 0;
@@ -1163,6 +1183,19 @@ body[data-page="contact"] .section-heading h2 {
 
   body[data-page="home"] h1 {
     font-size: clamp(2.2rem, 11vw, 3.25rem);
+  }
+
+  body[data-page="home"] .hero-copy {
+    padding: 1.2rem;
+  }
+
+  body[data-page="home"] .hero-card {
+    padding: 0.8rem;
+    max-width: min(360px, 100%);
+  }
+
+  body[data-page="home"] .portrait {
+    aspect-ratio: 4 / 4.35;
   }
 
   h2 {

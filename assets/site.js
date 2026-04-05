@@ -82,7 +82,10 @@
     const dots = Array.from(carousel.querySelectorAll("[data-dot]"));
     const prev = carousel.querySelector("[data-prev]");
     const next = carousel.querySelector("[data-next]");
+    const frame = carousel.querySelector(".moment-carousel-frame");
     let index = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
 
     function renderSlide(nextIndex) {
       index = (nextIndex + slides.length) % slides.length;
@@ -111,6 +114,36 @@
         renderSlide(dotIndex);
       });
     });
+
+    frame?.addEventListener(
+      "touchstart",
+      function (event) {
+        const touch = event.changedTouches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+      },
+      { passive: true }
+    );
+
+    frame?.addEventListener(
+      "touchend",
+      function (event) {
+        const touch = event.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+
+        if (Math.abs(deltaX) < 40 || Math.abs(deltaX) <= Math.abs(deltaY)) {
+          return;
+        }
+
+        if (deltaX < 0) {
+          renderSlide(index + 1);
+        } else {
+          renderSlide(index - 1);
+        }
+      },
+      { passive: true }
+    );
 
     renderSlide(0);
   });

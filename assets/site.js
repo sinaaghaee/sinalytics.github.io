@@ -22,12 +22,20 @@
   });
 
   const themeButton = document.querySelector(".theme-toggle");
+  const themeIcons = {
+    dark:
+      '<span class="theme-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path></svg></span>',
+    light:
+      '<span class="theme-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2.5"></path><path d="M12 19.5V22"></path><path d="M4.93 4.93l1.77 1.77"></path><path d="M17.3 17.3l1.77 1.77"></path><path d="M2 12h2.5"></path><path d="M19.5 12H22"></path><path d="M4.93 19.07l1.77-1.77"></path><path d="M17.3 6.7l1.77-1.77"></path></svg></span>'
+  };
   function updateThemeLabel() {
     const theme = root.getAttribute("data-theme");
     if (!themeButton) {
       return;
     }
-    themeButton.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    const label = nextTheme === "light" ? "Light mode" : "Dark mode";
+    themeButton.innerHTML = themeIcons[nextTheme] + '<span>' + label + "</span>";
     themeButton.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
   }
 

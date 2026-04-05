@@ -28,12 +28,12 @@
         <nav id="site-nav" class="site-nav" aria-label="Primary">
           <a href="index.html">Home</a>
           <a href="research.html">Research</a>
-          <a href="moments.html">Moments</a>
+          <a href="publications.html">Publications</a>
+          <a href="snapshots.html">Snapshots</a>
           <a href="cv.html">CV</a>
           <a href="contact.html">Contact</a>
         </nav>
         <div class="nav-actions">
-          <a class="button button-ghost" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
           <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
         </div>
       </div>
@@ -46,13 +46,7 @@
             <p class="eyebrow">Texas A&amp;M University | Industrial &amp; Systems Engineering</p>
             <h1>Sina Aghaee Dabaghan Fard</h1>
             <p class="hero-lead">
-              PhD researcher building reliable, interpretable machine learning for quality engineering,
-              prognostics, survival analysis, and Bayesian decision-making.
-            </p>
-            <p class="hero-body">
-              My work sits at the intersection of statistical modeling, engineering systems, and modern AI.
-              I focus on methods that are not only accurate, but also scientifically grounded and useful in
-              high-stakes industrial settings.
+              PhD student in Industrial and Systems Engineering, serving as a graduate research and teaching assistant at Texas A&amp;M University.
             </p>
             <div class="cta-row">
               <a class="button" href="research.html">Explore Research</a>
@@ -69,14 +63,6 @@
             <div class="portrait-wrap">
               <img class="portrait" src="assets/avatar.png" alt="Portrait of Sina Aghaee Dabaghan Fard">
             </div>
-            <div class="hero-card-body">
-              <p class="mini-label">Current focus</p>
-              <ul class="bullet-stack">
-                <li>Bayesian modeling and uncertainty-aware ML</li>
-                <li>Reliability engineering and prognostics</li>
-                <li>Physics-informed and data-driven methods</li>
-              </ul>
-            </div>
           </aside>
         </div>
       </section>
@@ -85,7 +71,7 @@
         <div class="container">
           <div class="section-heading reveal">
             <p class="eyebrow">Overview</p>
-            <h2>Academic depth with applied engineering impact</h2>
+            <h2>Academic depth, applied engineering perspective</h2>
           </div>
           <div class="two-column">
             <article class="panel reveal">
@@ -116,19 +102,16 @@
           </div>
           <div class="card-grid">
             <article class="panel reveal">
-              <p class="mini-label">01</p>
-              <h3>Reliability and prognostics</h3>
-              <p>Modeling degradation, failure risk, and time-to-event behavior for complex engineered systems.</p>
+              <h3>Quality engineering, reliability, and prognostics</h3>
+              <p>Failure prediction and survival analysis for engineering systems.</p>
             </article>
             <article class="panel reveal reveal-delay">
-              <p class="mini-label">02</p>
               <h3>Bayesian learning</h3>
-              <p>Capturing uncertainty and improving trust in predictions through probabilistic reasoning.</p>
+              <p>Bayesian hierarchical modeling, scalable Bayesian neural networks, and uncertainty quantification for prediction and decision support.</p>
             </article>
             <article class="panel reveal reveal-delay-2">
-              <p class="mini-label">03</p>
-              <h3>Physics-aware AI</h3>
-              <p>Combining domain knowledge with neural methods to improve robustness under sparse or noisy data.</p>
+              <h3>Physics-Informed Neural Networks (PINNs)</h3>
+              <p>Combining physical laws with machine learning under noisy or limited data.</p>
             </article>
           </div>
         </div>
@@ -136,41 +119,19 @@
 
       <section class="section">
         <div class="container">
-          <div class="split-highlight">
-            <article class="feature-panel reveal">
-              <p class="eyebrow">Featured work</p>
-              <h2>Selected publication</h2>
-              <h3>Robust Physics-Informed Neural Network Approach for Estimating Heterogeneous Elastic Properties from Noisy Displacement Data</h3>
-              <p>
-                A recent co-authored work on inverse elasticity modeling with noise-aware physics-informed learning,
-                reflecting my broader interest in dependable ML for scientific and engineering systems.
-              </p>
-              <a class="text-link" href="https://scholar.google.com/citations?user=bsKhgAIAAAAJ&amp;hl=en" target="_blank" rel="noopener">View academic profile</a>
-            </article>
-            <article class="feature-panel reveal reveal-delay">
-              <p class="eyebrow">Why this site exists</p>
-              <h2>A clear professional home</h2>
-              <p>
-                This site is designed as a compact research portfolio: enough depth for faculty and collaborators,
-                enough clarity for recruiters and interdisciplinary teams, and enough structure to keep expanding as
-                publications and projects grow.
-              </p>
-              <div class="mini-metrics">
-                <div>
-                  <strong>PhD</strong>
-                  <span>Data Science track</span>
-                </div>
-                <div>
-                  <strong>ML + Stats</strong>
-                  <span>Research toolkit</span>
-                </div>
-                <div>
-                  <strong>Applied</strong>
-                  <span>Engineering context</span>
-                </div>
-              </div>
-            </article>
-          </div>
+          <article class="feature-panel reveal publication-panel">
+            <p class="eyebrow">Featured work</p>
+            <h2>Selected publication</h2>
+            <h3>Bayesian Joint Model of Multi-Sensor and Failure Event Data for Multi-Mode Failure Prediction</h3>
+            <p>
+              Recently accepted in <strong>Technometrics</strong> (2026); also a finalist at the QCRE Best Student Paper Competition, 2025 IISE Annual Conference &amp; Expo.
+            </p>
+            <p class="mini-label">Abstract</p>
+            <p>
+              Modern industrial systems are often subject to multiple failure modes, and their conditions are monitored by multiple sensors, generating multiple time-series signals. Additionally, time-to-failure data are commonly available. Accurately predicting a system's remaining useful life (RUL) requires effectively leveraging multi-sensor time-series data alongside multi-mode failure event data. In most existing models, failure modes and RUL prediction are performed independently, ignoring the inherent relationship between these two tasks. Some models integrate multiple failure modes and event prediction using black-box machine learning approaches, which lack statistical rigor and cannot characterize the inherent uncertainty in the model and data. This paper introduces a unified approach to jointly model the multi-sensor time-series data and failure time concerning multiple failure modes. This proposed model integrates a Cox proportional hazards model, a Convolved Multi-output Gaussian Process, and multinomial failure mode distributions in a hierarchical Bayesian framework with corresponding priors, enabling accurate prediction with robust uncertainty quantification. Posterior distributions are effectively obtained by Variational Bayes, and prediction is performed with Monte Carlo sampling. The advantages of the proposed model are validated through extensive numerical and case studies with a jet-engine dataset.
+            </p>
+            <a class="text-link" href="publications.html#pub-j2">View publication</a>
+          </article>
         </div>
       </section>
 
@@ -185,6 +146,10 @@
               <h3>Research</h3>
               <p>Dive into themes, methods, and selected work.</p>
             </a>
+            <a class="panel link-panel reveal reveal-delay" href="publications.html">
+              <h3>Publications</h3>
+              <p>Browse papers, work in review, and manuscripts in preparation.</p>
+            </a>
             <a class="panel link-panel reveal reveal-delay" href="cv.html">
               <h3>Curriculum Vitae</h3>
               <p>See a structured overview of education, experience, and publications.</p>
@@ -193,8 +158,8 @@
               <h3>Contact</h3>
               <p>Reach out for academic, research, or industry conversations.</p>
             </a>
-            <a class="panel link-panel reveal" href="moments.html">
-              <h3>Moments</h3>
+            <a class="panel link-panel reveal" href="snapshots.html">
+              <h3>Snapshots</h3>
               <p>Browse event photos, conference highlights, and presentation snapshots.</p>
             </a>
           </div>
@@ -206,13 +171,7 @@
       <div class="container footer-row">
         <div>
           <strong>SINAlytics</strong>
-          <p>Bayesian and machine-learning research for reliability, quality, and engineering systems.</p>
-        </div>
-        <div class="footer-links">
-          <a href="research.html">Research</a>
-          <a href="moments.html">Moments</a>
-          <a href="cv.html">CV</a>
-          <a href="contact.html">Contact</a>
+          <p>Smart Insights, Nuanced Analytics.</p>
         </div>
         <div class="footer-meta">
           <a href="mailto:sina.aghaee@tamu.edu">sina.aghaee@tamu.edu</a>

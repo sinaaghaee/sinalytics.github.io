@@ -86,78 +86,12 @@
     let index = 0;
     let touchStartX = 0;
     let touchStartY = 0;
-    let transitionTimeout = null;
 
-    function clearSlideState(slide) {
-      slide.classList.remove(
-        "is-active",
-        "is-entering-from-right",
-        "is-entering-from-left",
-        "is-leaving-to-left",
-        "is-leaving-to-right"
-      );
-    }
-
-    function renderSlide(nextIndex, direction) {
-      const normalizedIndex = (nextIndex + slides.length) % slides.length;
-      const currentSlide = slides[index];
-      const nextSlide = slides[normalizedIndex];
-
-      if (!slides.length) {
-        return;
-      }
-
-      if (transitionTimeout) {
-        window.clearTimeout(transitionTimeout);
-        transitionTimeout = null;
-      }
-
-      if (!currentSlide || currentSlide === nextSlide) {
-        slides.forEach((slide, slideIndex) => {
-          clearSlideState(slide);
-          slide.classList.toggle("is-active", slideIndex === normalizedIndex);
-        });
-        index = normalizedIndex;
-        dots.forEach((dot, dotIndex) => {
-          dot.classList.toggle("is-active", dotIndex === index);
-        });
-        return;
-      }
-
-      slides.forEach((slide) => {
-        slide.classList.remove(
-          "is-entering-from-right",
-          "is-entering-from-left",
-          "is-leaving-to-left",
-          "is-leaving-to-right"
-        );
+    function renderSlide(nextIndex) {
+      index = (nextIndex + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("is-active", slideIndex === index);
       });
-
-      const enteringClass = direction < 0 ? "is-entering-from-left" : "is-entering-from-right";
-      const leavingClass = direction < 0 ? "is-leaving-to-right" : "is-leaving-to-left";
-
-      nextSlide.classList.add("is-active", enteringClass);
-      currentSlide.classList.add(leavingClass);
-
-      window.requestAnimationFrame(() => {
-        window.requestAnimationFrame(() => {
-          nextSlide.classList.remove(enteringClass);
-        });
-      });
-
-      transitionTimeout = window.setTimeout(() => {
-        clearSlideState(currentSlide);
-        nextSlide.classList.remove(
-          "is-entering-from-right",
-          "is-entering-from-left",
-          "is-leaving-to-left",
-          "is-leaving-to-right"
-        );
-        nextSlide.classList.add("is-active");
-        transitionTimeout = null;
-      }, 420);
-
-      index = normalizedIndex;
       dots.forEach((dot, dotIndex) => {
         dot.classList.toggle("is-active", dotIndex === index);
       });
@@ -168,17 +102,16 @@
     }
 
     prev?.addEventListener("click", function () {
-      renderSlide(index - 1, -1);
+      renderSlide(index - 1);
     });
 
     next?.addEventListener("click", function () {
-      renderSlide(index + 1, 1);
+      renderSlide(index + 1);
     });
 
     dots.forEach((dot, dotIndex) => {
       dot.addEventListener("click", function () {
-        const direction = dotIndex < index ? -1 : 1;
-        renderSlide(dotIndex, direction);
+        renderSlide(dotIndex);
       });
     });
 
@@ -204,14 +137,14 @@
         }
 
         if (deltaX < 0) {
-          renderSlide(index + 1, 1);
+          renderSlide(index + 1);
         } else {
-          renderSlide(index - 1, -1);
+          renderSlide(index - 1);
         }
       },
       { passive: true }
     );
 
-    renderSlide(0, 1);
+    renderSlide(0);
   });
 })();

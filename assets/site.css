@@ -918,12 +918,11 @@ body[data-page="contact"] .section-heading h2 {
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: var(--surface-alt);
-  aspect-ratio: 4 / 3;
 }
 
 .moment-image {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center;
   background: var(--surface-alt);
@@ -936,44 +935,22 @@ body[data-page="contact"] .section-heading h2 {
 }
 
 .moment-image-static {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
   margin-bottom: calc(38px + 0.75rem);
 }
 
 .moment-carousel-frame .moment-image {
-  position: absolute;
-  inset: 0;
+  display: none;
   border: 0;
   border-radius: 0;
-  opacity: 0;
-  transform: translateX(0);
-  pointer-events: none;
-  transition: transform 0.38s ease, opacity 0.38s ease;
 }
 
 .moment-carousel-frame .moment-image.is-active {
-  opacity: 1;
-  z-index: 2;
-  pointer-events: auto;
-}
-
-.moment-carousel-frame .moment-image.is-entering-from-right {
-  transform: translateX(100%);
-}
-
-.moment-carousel-frame .moment-image.is-entering-from-left {
-  transform: translateX(-100%);
-}
-
-.moment-carousel-frame .moment-image.is-leaving-to-left {
-  transform: translateX(-100%);
-  opacity: 0;
-  z-index: 1;
-}
-
-.moment-carousel-frame .moment-image.is-leaving-to-right {
-  transform: translateX(100%);
-  opacity: 0;
-  z-index: 1;
+  display: block;
 }
 
 .moment-controls {

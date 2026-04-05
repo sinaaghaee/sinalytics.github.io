@@ -1,23 +1,117 @@
-// Theme boot (respect system + remember)
-(function(){
-  const ls = localStorage.getItem('theme');
-  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  if (ls === 'light' || (!ls && prefersLight)) document.documentElement.classList.add('light');
-})();
+(function () {
+  const root = document.documentElement;
+  const storedTheme = localStorage.getItem("theme");
+  const activeTheme = storedTheme || "dark";
+  root.setAttribute("data-theme", activeTheme);
 
-function toggleTheme(){
-  const el = document.documentElement;
-  const isLight = el.classList.toggle('light');
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
-}
-
-// Mark current nav item active
-(function(){
-  const path = location.pathname.replace(/\/+$/, '');
-  document.querySelectorAll('header nav a').forEach(a=>{
-    const href = a.getAttribute('href').replace(/\/+$/, '');
-    if(href && (href === path || (href === '/' && (path === '' || path === '/')))){
-      a.classList.add('active');
+  const currentPage = document.body.dataset.page;
+  document.querySelectorAll(".site-nav a").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href) {
+      return;
     }
+    const normalized = href.replace("./", "");
+    const matchesHome = currentPage === "home" && (normalized === "index.html" || normalized === "/");
+    if (normalized === currentPage + ".html" || matchesHome) {
+      link.classList.add("is-active");
+    }
+  });
+
+  document.querySelectorAll("[data-year]").forEach((node) => {
+    node.textContent = new Date().getFullYear();
+  });
+
+  const themeButton = document.querySelector(".theme-toggle");
+  const themeIcons = {
+    dark:
+      '<span class="theme-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path></svg></span>',
+    light:
+      '<span class="theme-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2.5"></path><path d="M12 19.5V22"></path><path d="M4.93 4.93l1.77 1.77"></path><path d="M17.3 17.3l1.77 1.77"></path><path d="M2 12h2.5"></path><path d="M19.5 12H22"></path><path d="M4.93 19.07l1.77-1.77"></path><path d="M17.3 6.7l1.77-1.77"></path></svg></span>'
+  };
+  function updateThemeLabel() {
+    const theme = root.getAttribute("data-theme");
+    if (!themeButton) {
+      return;
+    }
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    const label = nextTheme === "light" ? "Light mode" : "Dark mode";
+    themeButton.innerHTML = themeIcons[nextTheme] + '<span>' + label + "</span>";
+    themeButton.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  }
+
+  updateThemeLabel();
+
+  if (themeButton) {
+    themeButton.addEventListener("click", function () {
+      const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("theme", nextTheme);
+      updateThemeLabel();
+    });
+  }
+
+  const menuButton = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".site-nav");
+  if (menuButton && nav) {
+    menuButton.addEventListener("click", function () {
+      const isOpen = nav.classList.toggle("is-open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+
+  const reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+    reveals.forEach((item) => observer.observe(item));
+  } else {
+    reveals.forEach((item) => item.classList.add("is-visible"));
+  }
+
+  document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll("[data-slide]"));
+    const dots = Array.from(carousel.querySelectorAll("[data-dot]"));
+    const prev = carousel.querySelector("[data-prev]");
+    const next = carousel.querySelector("[data-next]");
+    let index = 0;
+
+    function renderSlide(nextIndex) {
+      index = (nextIndex + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("is-active", slideIndex === index);
+      });
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === index);
+      });
+    }
+
+    if (!slides.length) {
+      return;
+    }
+
+    prev?.addEventListener("click", function () {
+      renderSlide(index - 1);
+    });
+
+    next?.addEventListener("click", function () {
+      renderSlide(index + 1);
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      dot.addEventListener("click", function () {
+        renderSlide(dotIndex);
+      });
+    });
+
+    renderSlide(0);
   });
 })();

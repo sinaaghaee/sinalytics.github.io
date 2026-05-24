@@ -692,6 +692,59 @@ body[data-page="home"] .section-heading h2 {
   transform: translateX(-50%) translateY(0);
 }
 
+.achievement-preview {
+  position: relative;
+  display: inline;
+  color: var(--accent-strong);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.achievement-preview:focus-visible {
+  border-radius: 0.25rem;
+  outline: 3px solid rgba(24, 78, 119, 0.2);
+  outline-offset: 3px;
+}
+
+.achievement-preview-card {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.65rem);
+  transform: translateX(-50%) translateY(8px);
+  display: grid;
+  gap: 0.45rem;
+  width: min(520px, 86vw);
+  padding: 0.55rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.achievement-preview-card img {
+  width: 100%;
+  max-height: min(620px, 72vh);
+  border-radius: calc(var(--radius-sm) - 4px);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.achievement-preview:hover .achievement-preview-card,
+.achievement-preview:focus-visible .achievement-preview-card {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 .page-hero .narrow {
   background: var(--surface);
   border: 1px solid var(--border);

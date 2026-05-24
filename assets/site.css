@@ -642,23 +642,11 @@ body[data-page="home"] .section-heading h2 {
 .journal-cover-thumb {
   width: 42px;
   aspect-ratio: 3 / 4;
+  flex: 0 0 auto;
   border-radius: 5px;
   border: 1px solid var(--border);
   box-shadow: 0 8px 18px rgba(20, 16, 10, 0.12);
   object-fit: cover;
-}
-
-.journal-cover-link {
-  display: inline-flex;
-  flex: 0 0 auto;
-  border-radius: 6px;
-  transition: transform 0.18s ease;
-}
-
-.journal-cover-link:hover,
-.journal-cover-link:focus-visible {
-  transform: translateY(-1px);
-  outline: none;
 }
 
 .publication-meta {
@@ -684,15 +672,6 @@ body[data-page="home"] .section-heading h2 {
   border: 1px solid rgba(24, 78, 119, 0.22);
   background: var(--accent-soft);
   color: var(--accent-strong);
-  text-decoration: none;
-  transition: border-color 0.18s ease, background-color 0.18s ease;
-}
-
-.journal-pill:hover,
-.journal-pill:focus-visible {
-  border-color: rgba(24, 78, 119, 0.4);
-  background: rgba(24, 78, 119, 0.18);
-  outline: none;
 }
 
 .publication-year {

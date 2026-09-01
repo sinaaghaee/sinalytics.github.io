@@ -1674,14 +1674,18 @@ h3 {
 
 .about-profile-body {
   display: grid;
-  grid-template-columns: minmax(250px, 0.7fr) minmax(0, 1.3fr);
+  grid-template-columns: 250px minmax(0, 1fr);
+  align-items: start;
 }
 
 .about-profile-photo {
-  min-height: 430px;
-  aspect-ratio: auto;
-  border-right: 1px solid var(--border);
-  border-bottom: 0;
+  width: 210px;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+  align-self: start;
+  margin: 1.5rem auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
 }
 
 .about-profile-photo img {
@@ -1827,7 +1831,7 @@ h3 {
   }
 
   .about-profile-body {
-    grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+    grid-template-columns: 250px minmax(0, 1fr);
   }
 }
 
@@ -1873,10 +1877,11 @@ h3 {
   }
 
   .about-profile-photo {
+    width: min(62vw, 210px);
     min-height: 0;
-    aspect-ratio: 4 / 4.5;
-    border-right: 0;
-    border-bottom: 1px solid var(--border);
+    aspect-ratio: 4 / 5;
+    margin: 1.5rem auto 0;
+    border: 1px solid var(--border);
   }
 
   .about-profile-data div {

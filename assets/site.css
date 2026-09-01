@@ -1773,6 +1773,96 @@ h3 {
   overflow-wrap: anywhere;
 }
 
+.about-timeline-section {
+  padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(5rem, 10vw, 8rem);
+}
+
+.timeline-order {
+  color: var(--muted);
+  font: 600 0.7rem/1.4 ui-monospace, "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.career-timeline {
+  position: relative;
+  margin-top: 1.25rem;
+}
+
+.career-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  left: 9.6rem;
+  width: 1px;
+  background: var(--accent);
+}
+
+.career-timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: 3.2rem;
+  padding: 0 0 2.5rem;
+}
+
+.career-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.career-timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 0.58rem;
+  left: calc(9.6rem - 4px);
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--bg);
+  border-radius: 50%;
+  background: var(--accent-strong);
+}
+
+.career-time {
+  padding-top: 0.2rem;
+  color: var(--accent-strong);
+  font: 700 0.73rem/1.4 ui-monospace, "SFMono-Regular", Consolas, monospace;
+  text-align: right;
+}
+
+.career-entry {
+  max-width: 760px;
+  padding: 0 0 0.25rem;
+}
+
+.career-type {
+  margin: 0 0 0.35rem;
+  color: var(--accent-strong);
+  font: 700 0.66rem/1.4 ui-monospace, "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.career-entry h3 {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.3;
+}
+
+.career-entry p {
+  max-width: 690px;
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.career-entry .career-place {
+  margin-top: 0.35rem;
+  color: var(--text);
+  font: 600 0.76rem/1.5 ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+
 .home-output {
   padding: 0 0 clamp(5rem, 10vw, 9rem);
 }
@@ -1913,6 +2003,25 @@ h3 {
   .about-profile-data div {
     grid-template-columns: 9rem minmax(0, 1fr);
     gap: 0.75rem;
+  }
+
+  .career-timeline::before {
+    left: 0.3rem;
+  }
+
+  .career-timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    padding: 0 0 2.25rem 1.6rem;
+  }
+
+  .career-timeline-item::before {
+    left: calc(0.3rem - 4px);
+  }
+
+  .career-time {
+    padding-top: 0;
+    text-align: left;
   }
 }
 

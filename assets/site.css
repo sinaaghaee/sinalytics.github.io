@@ -1510,14 +1510,6 @@ h3 {
   font: 700 clamp(0.8rem, 1.3vw, 0.98rem)/1.5 ui-monospace, "SFMono-Regular", Consolas, monospace;
 }
 
-.console-lead {
-  max-width: 700px;
-  margin: 1rem 0 0;
-  color: var(--muted);
-  font-size: clamp(1rem, 1.6vw, 1.2rem);
-  line-height: 1.65;
-}
-
 .console-intro .cta-row {
   margin-top: 2rem;
 }

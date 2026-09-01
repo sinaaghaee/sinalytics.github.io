@@ -41,34 +41,38 @@
 
     <main>
       <section class="page-hero about-hero">
-        <div class="container about-hero-grid">
-          <div class="reveal">
-            <p class="system-line"><span aria-hidden="true"></span> profile / about</p>
-            <h1>Sina Aghaee Dabaghan Fard</h1>
-            <p class="hero-lead">
-              I am a PhD student in Industrial and Systems Engineering and a graduate research and teaching assistant at Texas A&amp;M University. My research centers on Bayesian modeling, reliability, prognostics, survival analysis, and scientific machine learning.
-            </p>
-            <div class="cta-row compact">
-              <a class="button" href="cv.pdf?v=f1f56091" target="_blank" rel="noopener">Download Academic CV</a>
-              <a class="button button-ghost" href="contact.html">Contact</a>
-            </div>
-          </div>
-
-          <aside class="profile-console about-portrait reveal reveal-delay" aria-label="Portrait and academic profile">
+        <div class="container">
+          <p class="system-line reveal"><span aria-hidden="true"></span> profile / about</p>
+          <article class="profile-console about-profile-card reveal reveal-delay" aria-labelledby="about-profile-heading">
             <div class="console-bar">
               <span></span><span></span><span></span>
               <code>researcher.profile</code>
             </div>
-            <div class="profile-image-wrap">
-              <img src="assets/avatar.png" alt="Portrait of Sina Aghaee Dabaghan Fard">
-              <div class="scan-line" aria-hidden="true"></div>
+            <div class="about-profile-body">
+              <div class="profile-image-wrap about-profile-photo">
+                <img src="assets/avatar.png" alt="Portrait of Sina Aghaee Dabaghan Fard">
+                <div class="scan-line" aria-hidden="true"></div>
+              </div>
+              <div class="about-profile-content">
+                <h1 id="about-profile-heading">Researcher Profile</h1>
+                <dl class="about-profile-data">
+                  <div><dt>First name</dt><dd>Sina</dd></div>
+                  <div><dt>Last name</dt><dd>Aghaee Dabaghan Fard</dd></div>
+                  <div><dt>Position</dt><dd>PhD Student</dd></div>
+                  <div><dt>Roles</dt><dd>Graduate Research and Teaching Assistant</dd></div>
+                  <div><dt>Field</dt><dd>Industrial &amp; Systems Engineering</dd></div>
+                  <div><dt>Institution</dt><dd>Texas A&amp;M University</dd></div>
+                </dl>
+                <p class="about-profile-summary">
+                  My research centers on Bayesian modeling, reliability, prognostics, survival analysis, and scientific machine learning.
+                </p>
+                <div class="cta-row compact">
+                  <a class="button" href="cv.pdf?v=f1f56091" target="_blank" rel="noopener">Download Academic CV</a>
+                  <a class="button button-ghost" href="contact.html">Contact</a>
+                </div>
+              </div>
             </div>
-            <dl class="profile-data">
-              <div><dt>role</dt><dd>"PhD Researcher"</dd></div>
-              <div><dt>field</dt><dd>"Industrial &amp; Systems Engineering"</dd></div>
-              <div><dt>institution</dt><dd>"Texas A&amp;M University"</dd></div>
-            </dl>
-          </aside>
+          </article>
         </div>
       </section>
     </main>

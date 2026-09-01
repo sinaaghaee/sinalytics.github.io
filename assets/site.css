@@ -1584,6 +1584,12 @@ h3 {
   height: 100%;
 }
 
+.home-profile-links a[href*="researchgate.net"] svg {
+  width: 0.96rem;
+  height: 0.96rem;
+  margin: auto;
+}
+
 .home-profile-links a:hover,
 .home-profile-links a:focus-visible {
   color: var(--accent-strong);

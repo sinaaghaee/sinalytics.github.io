@@ -1696,7 +1696,7 @@ h3 {
   padding: clamp(1.5rem, 4vw, 2.75rem);
 }
 
-.about-profile-content h1 {
+body[data-page="cv"] .page-hero .about-profile-content h1 {
   margin: 0 0 1.3rem;
   font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
   font-size: 0.95rem;

@@ -1987,6 +1987,14 @@ body[data-page="contact"] .section-heading h2 {
   line-height: 1.65;
 }
 
+.moment-card h3 .text-link {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
 .moment-note {
   padding: 0.8rem 0 0 1rem;
   border-top: 1px solid var(--border);

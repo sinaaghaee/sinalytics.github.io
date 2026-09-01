@@ -1467,7 +1467,7 @@ h3 {
 }
 
 .console-hero {
-  padding: clamp(4.5rem, 9vw, 8rem) 0 clamp(3.5rem, 7vw, 6rem);
+  padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(3rem, 5vw, 4.5rem);
 }
 
 .console-hero-grid {
@@ -1497,24 +1497,24 @@ h3 {
 }
 
 .console-intro h1 {
-  max-width: 850px;
+  max-width: 680px;
   margin: 0;
-  font-size: clamp(3.2rem, 7.5vw, 7rem);
-  line-height: 0.92;
-  letter-spacing: -0.072em;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.052em;
 }
 
 .console-role {
-  margin: 1.65rem 0 0;
+  margin: 1.3rem 0 0;
   color: var(--accent-strong);
   font: 700 clamp(0.8rem, 1.3vw, 0.98rem)/1.5 ui-monospace, "SFMono-Regular", Consolas, monospace;
 }
 
 .console-lead {
   max-width: 700px;
-  margin: 1.2rem 0 0;
+  margin: 1rem 0 0;
   color: var(--muted);
-  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
   line-height: 1.65;
 }
 
@@ -1828,7 +1828,7 @@ h3 {
   }
 
   .console-intro h1 {
-    font-size: clamp(3rem, 15vw, 4.6rem);
+    font-size: clamp(2.4rem, 12vw, 3.2rem);
   }
 
   .signal-list {

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/sinalytics-mark.png?v=3" type="image/png">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body data-page="home">
@@ -16,7 +16,7 @@
     <header class="site-header">
       <div class="container nav-row">
         <a class="brand" href="index.html" aria-label="SINAlytics home">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <img class="brand-mark" src="assets/sinalytics-mark.png?v=3" alt="" aria-hidden="true">
           <span>
             <strong>SINAlytics</strong>
           </span>
@@ -27,9 +27,8 @@
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Primary">
           <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
           <a href="publications.html">Publications</a>
-          <a href="snapshots.html">Snapshots</a>
+          <a class="nav-label-tight" href="snapshots.html">Event Log</a>
           <a href="cv.html">About</a>
           <a href="contact.html">Contact</a>
         </nav>
@@ -40,128 +39,61 @@
     </header>
 
     <main>
-      <section class="hero hero-home">
-        <div class="container hero-grid">
-          <div class="hero-copy reveal">
-            <p class="eyebrow">Texas A&amp;M University · Industrial &amp; Systems Engineering</p>
-            <h1>Sina Aghaee Dabaghan Fard</h1>
-            <p class="hero-lead">
-              PhD student in Industrial and Systems Engineering, serving as a graduate research and teaching assistant at Texas A&amp;M University.
-            </p>
-            <p class="hero-body">
-              This website is where I share my research, publications, and academic work.
+      <section class="console-hero">
+        <div class="container console-hero-grid">
+          <div class="console-intro reveal">
+            <h1>Sina Aghaee</h1>
+            <p class="console-role">PhD Student and Researcher at Texas A&amp;M University</p>
+            <p class="home-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+              <span>College Station, TX</span>
             </p>
             <div class="cta-row">
-              <a class="button" href="research.html">Explore Research</a>
-              <a class="button button-ghost" href="contact.html">Get in Touch</a>
+              <a class="button button-quiet home-about-button" href="cv.html">About Me <span aria-hidden="true">→</span></a>
+            </div>
+            <dl class="signal-list" aria-label="Research profile">
+              <div><dt>Focus</dt><dd>Quality · Reliability · Prognostics</dd></div>
+              <div><dt>Methods</dt><dd>Bayesian inference · Scientific ML</dd></div>
+              <div><dt>Status</dt><dd>Research &amp; teaching assistant</dd></div>
+            </dl>
+            <div class="home-profile-links" aria-label="Profile links">
+              <a href="mailto:sina.aghaee@tamu.edu" aria-label="Email" title="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+              </a>
+              <a href="https://github.com/sinaaghaee" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.59 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.22-3.37-1.22-.45-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .08 1.53 1.05 1.53 1.05.9 1.57 2.35 1.12 2.92.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.15-4.56-5.11 0-1.13.39-2.06 1.03-2.79-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.07A9.33 9.33 0 0 1 12 6.84c.85 0 1.71.12 2.51.37 1.91-1.34 2.75-1.07 2.75-1.07.55 1.42.2 2.47.1 2.73.64.73 1.03 1.66 1.03 2.79 0 3.97-2.35 4.84-4.59 5.09.36.32.68.95.68 1.91 0 1.38-.01 2.5-.01 2.84 0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.25C22 6.59 17.52 2 12 2Z"></path></svg>
+              </a>
+              <a href="https://scholar.google.com/citations?user=bsKhgAIAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-5 9 5-9 5-9-5Z"></path><path d="M7 12v4.5c0 .8 2.3 2.5 5 2.5s5-1.7 5-2.5V12"></path><path d="M21 10v6"></path></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/sinaaghaee" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.3 4.98c0 1.08.86 1.97 1.93 1.97h.02A1.98 1.98 0 0 0 7.2 4.98 1.97 1.97 0 0 0 5.25 3ZM20.7 13.05c0-3.47-1.85-5.08-4.31-5.08-1.99 0-2.88 1.1-3.38 1.87V8.5H9.63c.04.89 0 11.5 0 11.5H13v-6.42c0-.34.03-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.37 0 1.92 1.04 1.92 2.58V20h3.38v-6.95Z"></path></svg>
+              </a>
+              <a href="https://www.researchgate.net/profile/Sina-Aghaee-Dabaghan-Fard" target="_blank" rel="noopener" aria-label="ResearchGate" title="ResearchGate">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.123 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.14-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.353-.306-.203-.517-.454-.67-.915a3.136 3.136 0 0 1-.147-.762 17.366 17.366 0 0 1-.034-.656c-.01-.26-.014-.572-.014-.939a26.401 26.403 0 0 1 .014-.938 15.821 15.822 0 0 1 .035-.656 3.19 3.19 0 0 1 .148-.76 1.89 1.89 0 0 1 .742-1.01c.344-.244.593-.352 1.137-.352.508 0 .815.096 1.144.303.33.207.528.492.764.925.047.094.111.118.198.07l1.044-.43c.075-.048.09-.115.042-.199a3.549 3.549 0 0 0-.466-.742 3 3 0 0 0-.679-.607 3.313 3.313 0 0 0-.903-.41A4.068 4.068 0 0 0 19.586 0zM8.217 5.836c-1.69 0-3.036.086-4.297.086-1.146 0-2.291 0-3.007-.029v.831l1.088.2c.744.144 1.174.488 1.174 2.264v11.288c0 1.777-.43 2.12-1.174 2.263l-1.088.2v.832c.773-.029 2.12-.086 3.465-.086 1.29 0 2.951.057 3.667.086v-.831l-1.49-.2c-.773-.115-1.174-.487-1.174-2.264v-4.784c.688.057 1.29.057 2.206.057 1.748 3.123 3.41 5.472 4.355 6.56.86 1.032 2.177 1.691 3.839 1.691.487 0 1.003-.086 1.318-.23v-.744c-1.031 0-2.063-.716-2.808-1.518-1.26-1.376-2.95-3.582-4.355-6.074 2.32-.545 4.04-2.722 4.04-4.9 0-3.208-2.492-4.698-5.758-4.698zm-.515 1.29c2.406 0 3.839 1.26 3.839 3.552 0 2.263-1.547 3.782-4.097 3.782-.974 0-1.404-.03-2.063-.086v-7.19c.66-.059 1.547-.059 2.32-.059z"></path></svg>
+              </a>
             </div>
           </div>
-          <aside class="hero-card reveal reveal-delay">
-            <div class="portrait-wrap">
-              <img class="portrait" src="assets/avatar.png" alt="Portrait of Sina Aghaee Dabaghan Fard">
-            </div>
-          </aside>
+
         </div>
       </section>
 
-      <section class="section">
+      <section class="home-output">
         <div class="container">
-          <div class="section-heading reveal">
-            <p class="eyebrow">Overview</p>
-            <h2>Academic depth, applied engineering perspective</h2>
+          <div class="console-section-heading reveal">
+            <h2 class="eyebrow">// selected output</h2>
+            <a class="text-link" href="publications.html">View all publications →</a>
           </div>
-          <div class="two-column">
-            <article class="panel reveal">
-              <h3>What I work on</h3>
-              <p>
-                I study advanced statistical learning methods for quality, reliability, and prognostics.
-                My interests include Bayesian modeling, Gaussian processes, survival analysis, physics-informed
-                neural networks, and Bayesian last-layer neural networks.
-              </p>
-            </article>
-            <article class="panel reveal reveal-delay">
-              <h3>How I position my work</h3>
-              <p>
-                I care about models that capture the behavior and constraints of real engineering systems,
-                communicate uncertainty clearly, and remain useful to decision-makers in noisy, real-world environments.
-                That balance between rigor and usefulness defines the kind of research I want to build.
-              </p>
-            </article>
+          <div class="output-list">
+            <a class="output-row reveal" href="publications.html#pub-j2">
+              <span class="output-index">J2</span>
+              <span class="output-title">Bayesian Joint Model of Multi-Sensor and Failure Event Data for Multi-Mode Failure Prediction</span>
+              <span class="output-meta">Technometrics · 2026</span>
+            </a>
           </div>
         </div>
       </section>
 
-      <section class="section section-alt">
-        <div class="container">
-          <div class="section-heading reveal">
-            <p class="eyebrow">Focus Areas</p>
-            <h2>Research themes</h2>
-          </div>
-          <div class="card-grid">
-            <article class="panel reveal">
-              <h3>Quality engineering, reliability, and prognostics</h3>
-              <p>Failure prediction and survival analysis for engineering systems.</p>
-            </article>
-            <article class="panel reveal reveal-delay">
-              <h3>Bayesian learning</h3>
-              <p>Bayesian hierarchical modeling, scalable Bayesian neural networks, and uncertainty quantification for prediction and decision support.</p>
-            </article>
-            <article class="panel reveal reveal-delay-2">
-              <h3>Physics-Informed Neural Networks (PINNs)</h3>
-              <p>Combining physical laws with machine learning under noisy or limited data.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <article class="feature-panel reveal publication-panel">
-            <p class="eyebrow">Featured work</p>
-            <h2>Selected publication</h2>
-            <h3>Bayesian Joint Model of Multi-Sensor and Failure Event Data for Multi-Mode Failure Prediction</h3>
-            <p>
-              This paper was recently published in <strong>Technometrics</strong> (2026) and was a finalist for the <a class="achievement-preview" href="assets/snapshots/iise-2025-2.jpeg">QCRE Best Student Paper Competition<span class="achievement-preview-card" aria-hidden="true"><img src="assets/snapshots/iise-2025-2.jpeg" alt=""><span>Certificate from the 2025 QCRE Best Student Paper Competition.</span></span></a> at the 2025 IISE Annual Conference &amp; Expo.
-            </p>
-            <p class="mini-label">Abstract</p>
-            <p>
-              Modern industrial systems are often subject to multiple failure modes, and their conditions are monitored by multiple sensors, generating multiple time-series signals. Additionally, time-to-failure data are commonly available. Accurately predicting a system's remaining useful life (RUL) requires effectively leveraging multi-sensor time-series data alongside multi-mode failure event data. In most existing models, failure modes and RUL prediction are performed independently, ignoring the inherent relationship between these two tasks. Some models integrate multiple failure modes and event prediction using black-box machine learning approaches, which lack statistical rigor and cannot characterize the inherent uncertainty in the model and data. This paper introduces a unified approach to jointly model the multi-sensor time-series data and failure time concerning multiple failure modes. This proposed model integrates a Cox proportional hazards model, a Convolved Multi-output Gaussian Process, and multinomial failure mode distributions in a hierarchical Bayesian framework with corresponding priors, enabling accurate prediction with robust uncertainty quantification. Posterior distributions are effectively obtained by Variational Bayes, and prediction is performed with Monte Carlo sampling. The advantages of the proposed model are validated through extensive numerical and case studies with a jet-engine dataset.
-            </p>
-            <a class="text-link" href="publications.html#pub-j2">View publication</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section-alt">
-        <div class="container">
-          <div class="section-heading reveal">
-            <p class="eyebrow">Quick access</p>
-            <h2>Explore the full profile</h2>
-          </div>
-          <div class="card-grid card-grid-wide">
-            <a class="panel link-panel reveal" href="research.html">
-              <h3>Research</h3>
-              <p>Dive into themes, methods, and selected work.</p>
-            </a>
-            <a class="panel link-panel reveal reveal-delay" href="publications.html">
-              <h3>Publications</h3>
-              <p>Browse papers, work in review, and manuscripts in preparation.</p>
-            </a>
-            <a class="panel link-panel reveal reveal-delay" href="cv.html">
-              <h3>About Me</h3>
-              <p>See a structured overview of education, experience, and publications.</p>
-            </a>
-            <a class="panel link-panel reveal reveal-delay-2" href="contact.html">
-              <h3>Contact</h3>
-              <p>Reach out for academic, research, or industry conversations.</p>
-            </a>
-            <a class="panel link-panel reveal" href="snapshots.html">
-              <h3>Snapshots</h3>
-              <p>Browse event photos, conference highlights, and presentation snapshots.</p>
-            </a>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/sinalytics-mark.png?v=3" type="image/png">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body data-page="cv">
@@ -16,7 +16,7 @@
     <header class="site-header">
       <div class="container nav-row">
         <a class="brand" href="index.html" aria-label="SINAlytics home">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <img class="brand-mark" src="assets/sinalytics-mark.png?v=3" alt="" aria-hidden="true">
           <span>
             <strong>SINAlytics</strong>
           </span>
@@ -27,9 +27,8 @@
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Primary">
           <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
           <a href="publications.html">Publications</a>
-          <a href="snapshots.html">Snapshots</a>
+          <a class="nav-label-tight" href="snapshots.html">Event Log</a>
           <a href="cv.html">About</a>
           <a href="contact.html">Contact</a>
         </nav>
@@ -40,14 +39,124 @@
     </header>
 
     <main>
-      <section class="page-hero">
-        <div class="container narrow reveal">
-          <h1>About Me</h1>
-          <p class="hero-lead">
-            A brief page for now, with the current academic CV available below.
-          </p>
-          <div class="cta-row compact">
-            <a class="button" href="cv.pdf?v=f1f56091" target="_blank" rel="noopener">Download Academic CV</a>
+      <section class="page-hero about-hero">
+        <div class="container">
+          <p class="system-line reveal"><span aria-hidden="true"></span> profile / about</p>
+          <article class="profile-console about-profile-card reveal reveal-delay" aria-label="Profile details">
+            <div class="console-bar">
+              <span></span><span></span><span></span>
+              <code>profile</code>
+            </div>
+            <div class="about-profile-body">
+              <div class="profile-image-wrap about-profile-photo">
+                <img src="assets/avatar.png" alt="Portrait of Sina Aghaee Dabaghan Fard">
+                <div class="scan-line" aria-hidden="true"></div>
+              </div>
+              <div class="about-profile-content">
+                <dl class="about-profile-data">
+                  <div><dt>First name</dt><dd>Sina</dd></div>
+                  <div><dt>Last name</dt><dd>Aghaee Dabaghan Fard</dd></div>
+                  <div><dt>Position</dt><dd>PhD Student</dd></div>
+                  <div><dt>Roles</dt><dd>Graduate Research and Teaching Assistant</dd></div>
+                  <div><dt>Field</dt><dd>Industrial &amp; Systems Engineering</dd></div>
+                  <div><dt>Current institution</dt><dd>Texas A&amp;M University</dd></div>
+                </dl>
+                <div class="cta-row compact">
+                  <a class="button" href="cv.pdf?v=f1f56091" target="_blank" rel="noopener">Download Academic CV</a>
+                  <a class="button button-ghost" href="contact.html">Contact</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-timeline-section" aria-labelledby="background-heading">
+        <div class="container">
+          <div class="console-section-heading reveal">
+            <h2 id="background-heading" class="eyebrow">// background</h2>
+          </div>
+
+          <div class="career-timeline">
+            <article class="career-timeline-item reveal">
+              <div class="career-time">2023 — Present</div>
+              <div class="career-entry">
+                <p class="career-type">Education · Research</p>
+                <h3>PhD Student &amp; Graduate Research Assistant</h3>
+                <p class="career-place">Texas A&amp;M University · College Station, TX</p>
+                <p>Industrial &amp; Systems Engineering, Data Science Track. Research in Bayesian modeling, reliability, prognostics, and scientific machine learning.</p>
+              </div>
+            </article>
+
+            <article class="career-timeline-item reveal">
+              <div class="career-time">2024 — 2026</div>
+              <div class="career-entry">
+                <p class="career-type">Industry Collaboration as Research Assistant</p>
+                <h3>Texas A&amp;M Engineering Experiment Station (TEES) &amp; Crider Foods</h3>
+                <p class="career-place">Texas A&amp;M University · College Station, TX</p>
+                <p class="career-place">Crider Foods · Stillmore, GA</p>
+                <p>Established smart monitoring, automated data pipelines, and a multi-mode machine-breakdown prediction model for can-seaming operations.</p>
+              </div>
+            </article>
+
+            <article class="career-timeline-item reveal">
+              <div class="career-time">2023 — 2025</div>
+              <div class="career-entry">
+                <p class="career-type">Teaching</p>
+                <h3>Teaching Assistant</h3>
+                <p class="career-place">Texas A&amp;M University · College Station, TX</p>
+                <p>Supported undergraduate and graduate courses in quality engineering, advanced quality control, and uncertainty modeling.</p>
+              </div>
+            </article>
+
+            <article class="career-timeline-item reveal">
+              <div class="career-time">2021 — 2023</div>
+              <div class="career-entry">
+                <p class="career-type">Professional Experience</p>
+                <h3>Business Analyst</h3>
+                <p class="career-place">Danesh Co. · Tehran, Iran</p>
+                <p>Contributed to financial software projects involving order management, data processing, and trading-algorithm development.</p>
+              </div>
+            </article>
+
+            <article class="career-timeline-item reveal">
+              <div class="career-time">2021 — 2023</div>
+              <div class="career-entry">
+                <p class="career-type">Education · Teaching</p>
+                <h3>MS in Industrial &amp; Systems Engineering</h3>
+                <p class="career-place">Sharif University of Technology · Tehran, Iran</p>
+                <p>Completed an MS in Industrial &amp; Systems Engineering, Engineering Management Track, while serving as a teaching assistant for courses in software and information systems.</p>
+              </div>
+            </article>
+
+            <article class="career-timeline-item reveal">
+              <div class="career-time">2020</div>
+              <div class="career-entry">
+                <p class="career-type">Professional Experience</p>
+                <h3>Business Analyst Intern</h3>
+                <p class="career-place">Podro Co. · Tehran, Iran</p>
+                <p>Conducted market research and data analysis for an international project in the Middle East market.</p>
+              </div>
+            </article>
+
+            <article class="career-timeline-item reveal">
+              <div class="career-time">2019 — 2020</div>
+              <div class="career-entry">
+                <p class="career-type">Research Experience</p>
+                <h3>Research Assistant</h3>
+                <p class="career-place">Iran University of Science and Technology · Tehran, Iran</p>
+                <p>Used process simulation and value-stream mapping to study patient flow and bottlenecks in a hospital emergency department.</p>
+              </div>
+            </article>
+
+            <article class="career-timeline-item reveal">
+              <div class="career-time">2015 — 2020</div>
+              <div class="career-entry">
+                <p class="career-type">Education</p>
+                <h3>BS in Industrial &amp; Systems Engineering</h3>
+                <p class="career-place">Iran University of Science and Technology · Tehran, Iran</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>

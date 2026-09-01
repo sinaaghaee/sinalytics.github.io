@@ -1,7 +1,7 @@
 (function () {
   const root = document.documentElement;
   const storedTheme = localStorage.getItem("theme");
-  const activeTheme = storedTheme || "dark";
+  const activeTheme = storedTheme || "light";
   root.setAttribute("data-theme", activeTheme);
 
   const currentPage = document.body.dataset.page;

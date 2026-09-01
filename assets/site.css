@@ -1464,7 +1464,7 @@ h3 {
 
 .console-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
+  grid-template-columns: minmax(0, 900px);
   align-items: center;
   gap: clamp(3rem, 8vw, 7rem);
 }
@@ -1635,6 +1635,35 @@ h3 {
   color: var(--signal);
 }
 
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.55fr);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 7rem);
+}
+
+.about-hero .system-line {
+  margin-bottom: 1.35rem;
+}
+
+.about-hero .hero-lead {
+  max-width: 760px;
+}
+
+.about-portrait {
+  width: 100%;
+  max-width: 390px;
+  justify-self: end;
+}
+
+.about-portrait .profile-image-wrap {
+  aspect-ratio: 4 / 4.65;
+}
+
+.about-portrait .profile-image-wrap img {
+  object-position: center top;
+}
+
 .home-output {
   padding: 0 0 clamp(5rem, 10vw, 9rem);
 }
@@ -1704,8 +1733,14 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .profile-console {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-console,
+  .about-portrait {
     width: min(100%, 520px);
+    justify-self: start;
   }
 }
 

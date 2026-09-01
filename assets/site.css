@@ -1060,14 +1060,6 @@ body[data-page="contact"] .section-heading h2 {
   margin-bottom: calc(38px + 0.75rem);
 }
 
-.moment-card-featured {
-  grid-column: 1 / -1;
-}
-
-.moment-image-static.moment-image-panorama {
-  aspect-ratio: 1280 / 351;
-}
-
 .moment-carousel-frame .moment-image {
   display: none;
   border: 0;

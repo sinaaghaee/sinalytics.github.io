@@ -169,6 +169,10 @@ main {
   color: var(--accent);
 }
 
+.site-nav .nav-label-tight {
+  word-spacing: -0.18em;
+}
+
 .nav-actions {
   display: flex;
   align-items: center;

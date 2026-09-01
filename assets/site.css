@@ -2044,8 +2044,14 @@ body[data-page="contact"] .section-heading h2 {
 }
 
 .publication-notes {
-  border-left: 2px solid var(--accent);
+  padding-left: 0;
+  border-left: 0;
+  list-style: none;
+}
+
+.publication-notes li {
   padding-left: 1.1rem;
+  border-left: 2px solid var(--accent);
 }
 
 .card-grid,

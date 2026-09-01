@@ -950,6 +950,10 @@ body[data-page="contact"] .section-heading h2 {
   height: 100%;
 }
 
+.contact-link-tile[href*="researchgate.net"] .contact-link-icon svg {
+  fill: currentColor;
+}
+
 .contact-link-tile::after {
   content: "↗";
   color: var(--muted);

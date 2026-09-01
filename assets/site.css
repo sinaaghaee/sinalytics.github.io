@@ -1529,6 +1529,31 @@ h3 {
   margin-top: 2rem;
 }
 
+.home-about-button {
+  gap: 0.65rem;
+  min-height: 40px;
+  padding: 0 0.9rem;
+  border-color: var(--accent);
+  background: var(--surface);
+  color: var(--accent-strong);
+  box-shadow: 3px 3px 0 var(--accent-soft);
+}
+
+.home-about-button:hover,
+.home-about-button:focus-visible {
+  border-color: var(--accent-strong);
+  background: var(--accent-soft);
+}
+
+.home-about-button span {
+  transition: transform 0.2s ease;
+}
+
+.home-about-button:hover span,
+.home-about-button:focus-visible span {
+  transform: translateX(2px);
+}
+
 .signal-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

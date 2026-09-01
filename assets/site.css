@@ -1712,7 +1712,7 @@ body[data-page="cv"] .page-hero .about-profile-content h1 {
 
 .about-profile-data div {
   display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr);
+  grid-template-columns: 9rem minmax(0, 1fr);
   gap: 1rem;
   padding: 0.68rem 0;
   border-top: 1px solid var(--border);
@@ -1877,7 +1877,7 @@ body[data-page="cv"] .page-hero .about-profile-content h1 {
   }
 
   .about-profile-data div {
-    grid-template-columns: 6.5rem minmax(0, 1fr);
+    grid-template-columns: 9rem minmax(0, 1fr);
     gap: 0.75rem;
   }
 }

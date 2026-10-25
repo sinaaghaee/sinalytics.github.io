@@ -18,8 +18,7 @@ a:hover { text-decoration: underline; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
 img { max-width: 100%; }
 .profile-wrap { width: min(900px, calc(100% - 48px)); margin: auto; }
-.profile-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 25px 0; border-bottom: 1px solid var(--line); }
-.profile-brand { display: inline-flex; align-items: center; color: var(--ink); font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: .84rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.profile-header { display: flex; align-items: center; justify-content: flex-end; gap: 24px; padding: 25px 0; border-bottom: 1px solid var(--line); }
 .profile-header nav { display: flex; flex-wrap: wrap; gap: 20px; font-size: 15px; }
 .profile-header nav a { color: var(--muted); }
 .profile-header nav a:hover, .profile-header nav a[aria-current="page"] { color: var(--accent); }
